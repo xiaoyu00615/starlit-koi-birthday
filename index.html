@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="把星光、锦鲤和一段旋律，装进一张生日卡。">
+  <title>愿你有星可追 · 生日卡</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./player.js" defer></script>
+</head>
+<body>
+  <header class="site-header frame">
+    <a class="wordmark" href="./" aria-label="生日卡首页">
+      <img src="./favicon.svg" alt="" width="28" height="28">
+      <span>星光信笺</span>
+    </a>
+    <nav aria-label="卡片导航">
+      <a href="#letter">生日信</a>
+      <a href="#music">音乐</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero frame" aria-labelledby="birthday-title">
+      <div class="hero-content">
+        <p class="kicker"><span></span> HAPPY BIRTHDAY</p>
+        <h1 id="birthday-title">愿你有星可追</h1>
+        <p class="hero-copy">把一点星光、一尾锦鲤，和一句生日快乐，<br class="wide-break">都装进这张小小的卡里。</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#letter">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.99 5.7a1.94 1.94 0 0 1-2.02 0L2 7"/></svg>
+            打开生日信
+          </a>
+          <a class="button button-outline" href="#music">去听音乐</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img src="./gold-koi.webp" width="900" height="1125" alt="一尾沿星轨游动的金线锦鲤，四周散落细小星光" fetchpriority="high">
+      </div>
+    </section>
+
+    <div class="content frame">
+      <section id="letter" class="letter panel" aria-labelledby="letter-title">
+        <svg class="letter-stars" width="86" height="86" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.94 14.34a1 1 0 0 0-1.28 1.28L10 21l1.34-5.38a1 1 0 0 0-1.28-1.28L5 13l5.06-1.34a1 1 0 0 0 1.28-1.28L10 5l-1.34 5.38a1 1 0 0 0 1.28 1.28L15 13l-5.06 1.34Z"/><path d="M18 4v6m-3-3h6m-2 8v4m-2-2h4"/></svg>
+        <p class="kicker">A LETTER FOR YOU</p>
+        <h2 id="letter-title">写给今天的你</h2>
+        <p>生日快乐，朋友。<br>愿你在新的一岁里，有想见的人，有期待的事，<br class="wide-break">也有几段可以慢慢走、不急着抵达的路。</p>
+        <p>哪怕偶尔迷路，也愿你抬头时，<br>还能认出那颗自己想追的星。</p>
+      </section>
+
+      <section id="music" class="panel music-panel" aria-labelledby="music-title">
+        <p class="kicker">A LITTLE SOUNDTRACK</p>
+        <h2 id="music-title">留一段旋律</h2>
+        <p>读完信，坐一会儿。</p>
+        <div class="player">
+          <audio src="./starlight.mp3" preload="metadata" controls aria-label="星光慢拍">
+            <a href="./starlight.mp3">打开星光慢拍</a>
+          </audio>
+          <div class="player-controls" hidden>
+            <div class="track">
+              <div class="track-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg>
+              </div>
+              <div class="track-name"><strong>星光慢拍</strong><span>轻音乐</span></div>
+              <button class="play" type="button" aria-label="播放音乐">
+                <svg class="play-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 4 14 8-14 8Z"/></svg>
+                <svg class="pause-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" hidden><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+              </button>
+            </div>
+            <input class="seek" aria-label="音乐播放进度" type="range" min="0" max="1" step=".1" value="0" disabled>
+            <div class="track-times"><span class="elapsed">0:00</span><span class="duration">0:00</span></div>
+            <p class="player-feedback" role="status" hidden>音频暂时无法播放，请稍后重试。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer frame">
+    <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 2.1 5.9L20 11l-5.9 2.1L12 19l-2.1-5.9L4 11l5.9-2.1L12 3ZM20 2v4m-2-2h4M4 18v4m-2-2h4"/></svg> 星光信笺</span>
+  </footer>
+</body>
+</html>
